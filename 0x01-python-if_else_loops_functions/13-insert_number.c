@@ -3,10 +3,10 @@
 /**
  * insert_node - inserts node a num into a sorted singly linked list.
  * @head: list head
- * @num: num to store in the new node
+ * @number: nui to store in the new node
  * Return: pointer to the new node
  */
-listint_t *insert_node(listint_t **head, int num)
+listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *runner;
 	listint_t *new;
@@ -16,9 +16,9 @@ listint_t *insert_node(listint_t **head, int num)
 	new = malloc(sizeof(listint_t));
 	if (new == NULL)
 		return (NULL);
-	new->n = num;
+	new->n = number;
 
-	if (*head == NULL || (*head)->n > num)
+	if (*head == NULL || (*head)->n > number)
 	{
 		new->next = *head;
 		*head = new;
@@ -27,7 +27,7 @@ listint_t *insert_node(listint_t **head, int num)
 
 	while(runner->next != NULL)
 	{
-		if ((runner->next)->n >= num)
+		if ((runner->next)->n >= number)
 		{
 			new->next = runner->next;
 			runner->next = new;
