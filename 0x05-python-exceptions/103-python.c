@@ -6,15 +6,13 @@ void print_python_list(PyObject *p);
 void print_python_bytes(PyObject *p);
 void print_python_float(PyObject *p);
 
-/**
- * print_python_list - Prints information about Python list. Such as size, and
- * amount of memory allcoated. What type each element is and if it is a type
- * 'bytes' or 'float', print additional information on the element.
- *
- * @p: Pointer to a Python object.
- *
- * Return: void.
- */
+/** Print information about a Python list, including its size and allocated memory.
+* Also displays the type of each element and provides additional information for elements of type 'bytes' or 'float'.
+* Parameters:
+* - p: Pointer to a Python object.
+*
+* Return: None.
+*/
 void print_python_list(PyObject *p)
 {
 	Py_ssize_t p_size;
@@ -44,15 +42,14 @@ void print_python_list(PyObject *p)
 	fflush(stdout);
 }
 
-/**
- * print_python_bytes - Checks if the object is a Python bytes object. If so
- * print the size, attempt to print it as a string and the first 10 bytes at
- * most in hexadecimal.
- *
- * @p: Pointer to a Python object.
- *
- * Return: void.
- */
+/** Check if the object is a Python bytes object. If it is, print the size, attempt to print it as a string,
+* and display the first 10 bytes (at most) in hexadecimal format.
+*
+* Parameters:
+* - p: Pointer to a Python object.
+*
+* Return: None.
+*/
 void print_python_bytes(PyObject *p)
 {
 	Py_ssize_t p_size;
@@ -83,8 +80,8 @@ void print_python_bytes(PyObject *p)
 }
 
 /**
- * print_python_float - Checks if the object is a Python float object. If so
- * print the float value. If it is not, print an error message.
+ * print_python_float - if object is a Python float object. If so
+ * print the float value. else, print an error message.
  *
  * @p: Pointer to a Python object.
  *
