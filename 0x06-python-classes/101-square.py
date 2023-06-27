@@ -8,7 +8,7 @@ class Square:
         """Initializing an instance of Square
         Args:
             size (int): The size of the Square instance. Default value is 0.
-            position (:obj:'tuple' of int): x, y coordinate offset when
+            position (:obj:'tuple' of int): a, b coordinate offset when
                 printing the square.
         """
         self.size = size
@@ -17,17 +17,17 @@ class Square:
     def __str__(self):
         """Returns a string consisting of a square made with hashtags using the
         'size'. Uses 'position' to offset where the printing should begin. The
-        x, y coordinate in 'position' is the location of the top left corner of
+        a, b coordinate in 'position' is the location of the top left corner of
         the square.
         Returns:
             str: A string representing a square made of hashtags.
         """
         __my_string = ""
         if self.__size is not 0:
-            for y in range(self.__position[1]):
+            for b in range(self.__position[1]):
                 __my_string += '\n'
             for i in range(self.__size):
-                for x in range(self.__position[0]):
+                for a in range(self.__position[0]):
                     __my_string += ' '
                 for j in range(self.__size):
                     __my_string += '#'
@@ -51,7 +51,7 @@ class Square:
 
     @property
     def position(self):
-        """:obj:'tuple' of int: x, y coordinate offset when printing the square.
+        """:obj:'tuple' of int: a, b coordinate offset when printing the square.
         """
         return self.__position
 
@@ -74,13 +74,13 @@ class Square:
 
     def my_print(self):
         """Prints a square with hashtags using the 'size'. Uses 'position' to
-        offset where the printing should begin. The x, y coordinate in
+        offset where the printing should begin. The a, b coordinate in
         'position' is the location of the top left corner of the square."""
         if self.__size is not 0:
-            for y in range(self.__position[1]):
+            for b in range(self.__position[1]):
                 print()
             for i in range(self.__size):
-                for x in range(self.__position[0]):
+                for a in range(self.__position[0]):
                     print(" ", end="")
                 for j in range(self.__size):
                     print("#", end="")
