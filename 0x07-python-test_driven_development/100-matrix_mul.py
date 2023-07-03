@@ -3,98 +3,97 @@
     Module containing matrix multiplication.
 """
 
-
-def matrix_mul(m_a, m_b):
+def matrix_mul(m_x, m_y):
     """ Multiplies two matrices. Validation of matrices must be done in the
         stated order.
 
     Args:
-        m_a (:obj:`list' of :obj:`list` of int or float): List of lists of
+        m_x (:obj:`list' of :obj:`list` of int or float): List of lists of
             integers or floats.
-        m_b (:obj:`list` of :obj:`list` of int or float): List of lists of
+        m_y (:obj:`list` of :obj:`list` of int or float): List of lists of
             integers or floats.
 
     Returns:
         :obj:`list` of :obj:`list` of int or float: Product of two matrices.
     """
 
-    if type(m_a) is not list:
-        raise TypeError("m_a must be a list")
-    if type(m_b) is not list:
-        raise TypeError("m_b must be a list")
+    if type(m_x) != list:
+        raise TypeError("m_x must be a list")
+    if type(m_y)!= list:
+        raise TypeError("m_y must be a list")
 
-    a_col_len = 0
-    a_row_len = None
-    a_matrix = True
-    a_i_or_f = True
-    a_rect = True
-    for row in m_a:
-        if type(row) is not list:
-            a_matrix = False
+    x_col_len = 0
+    x_row_len = None
+    x_matrix = True
+    x_i_or_f = True
+    x_rect = True
+    for row in m_x:
+        if type(row) != list:
+            x_matrix = False
             break
         for x in row:
-            if type(x) is not int and type(x) is not float:
-                a_i_or_f = False
-        if a_row_len is not None:
-            if a_row_len != len(row):
-                a_rect = False
+            if type(x) != int and type(x) != float:
+                x_i_or_f = False
+        if x_row_len != None:
+            if x_row_len != len(row):
+                x_rect = False
         else:
-            a_row_len = len(row)
-        a_col_len += 1
+            x_row_len = len(row)
+        x_col_len += 1
 
-    b_col_len = 0
-    b_row_len = None
-    b_matrix = True
-    b_i_or_f = True
-    b_rect = True
-    for row in m_b:
-        if type(row) is not list:
-            b_matrix = False
+    y_col_len = 0
+    y_row_len = None
+    y_matrix = True
+    y_i_or_f = True
+    y_rect = True
+    for row in m_y:
+        if type(row) != list:
+            y_matrix = False
             break
         for x in row:
-            if type(x) is not int and type(x) is not float:
-                b_i_or_f = False
-        if b_row_len is not None:
-            if b_row_len != len(row):
-                b_rect = False
+            if type(x) != int and type(x) != float:
+                y_i_or_f = False
+        if y_row_len != None:
+            if y_row_len != len(row):
+                y_rect = False
         else:
-            b_row_len = len(row)
-        b_col_len += 1
+            y_row_len = len(row)
+        y_col_len += 1
 
-    if not a_matrix:
-        raise TypeError("m_a must be a list of lists")
+    if not x_matrix:
+        raise TypeError("m_x must be a list of lists")
 
-    if not b_matrix:
-        raise TypeError("m_b must be a list of lists")
+    if not y_matrix:
+        raise TypeError("m_y must be a list of lists")
 
-    if a_col_len is 0 or (a_row_len is 0 and a_rect):
-        raise ValueError("m_a can't be empty")
+    if x_col_len == 0 or (x_row_len == 0 and x_rect):
+        raise ValueError("m_x can't be empty")
 
-    if b_col_len is 0 or (b_row_len is 0 and b_rect):
-        raise ValueError("m_b can't be empty")
+    if y_col_len == 0 or (y_row_len == 0 and y_rect):
+        raise ValueError("m_y can't be empty")
 
-    if not a_i_or_f:
-        raise TypeError("m_a should contain only integers or floats")
+    if not x_i_or_f:
+        raise TypeError("m_x should contain only integers or floats")
 
-    if not b_i_or_f:
-        raise TypeError("m_b should contain only integers or floats")
+    if not y_i_or_f:
+        raise TypeError("m_y should contain only integers or floats")
 
-    if not a_rect:
-        raise TypeError("each row of m_a must should be of the same size")
+    if not x_rect:
+        raise TypeError("each row of m_x must should be of the same size")
 
-    if not b_rect:
-        raise TypeError("each row of m_b must should be of the same size")
+    if not y_rect:
+        raise TypeError("each row of m_y must should be of the same size")
 
-    if a_row_len != b_col_len:
-        raise ValueError("m_a and m_b can't be multiplied")
+    if x_row_len != y_col_len:
+        raise ValueError("m_x and m_y can't be multiplied")
 
     new_matrix = []
-    for a_cdx in range(a_col_len):
+    for x_cdx in range(x_col_len):
         new_row = []
-        for rdx in range(b_row_len):
+        for rdx in range(y_row_len):
             total = 0
-            for cdx in range(b_col_len):
-                total += m_b[cdx][rdx] * m_a[a_cdx][cdx]
+            for cdx in range(y_col_len):
+                total += m_y[cdx][rdx] * m_x[x_cdx][cdx]
             new_row.append(total)
         new_matrix.append(new_row)
 
