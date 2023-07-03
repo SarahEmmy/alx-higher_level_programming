@@ -59,7 +59,7 @@ Test list containing lists with varying amount of elements:
 
 Test list containing lists with non integer/float elements:
 
-	>>> matrix = [["not", "a"], ["integer", "float"]]
+	>>> matrix = [["not", "x"], ["integer", "float"]]
 	>>> matrix_divided(matrix, 2)
 	Traceback (most recent call last):
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
