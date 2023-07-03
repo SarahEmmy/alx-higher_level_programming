@@ -143,7 +143,7 @@ def top_right(matrix, y, x, n):
 
 if __name__ == "__main__":
     from sys import argv
-    if len(argv) is not 2:
+    if len(argv) != 2:
         print("Usage: nqueens N")
         exit(1)
     try:
