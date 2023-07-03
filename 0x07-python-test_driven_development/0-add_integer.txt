@@ -12,7 +12,7 @@ Test with no arguments:
 
    >>> add_integer()
    Traceback (most recent call last):
-   TypeError: add_integer() missing 1 required positional argument: 'a'
+   TypeError: add_integer() missing 1 required positional argument: 'x'
 
 Test with only one argument:
 
