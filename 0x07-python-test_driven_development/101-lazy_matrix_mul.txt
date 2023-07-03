@@ -36,13 +36,13 @@ Test no arguments:
 
 	>>> print(matrix_mul())
 	Traceback (most recent call last):
-	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_x' and 'm_y'
 
 Test with only one argument:
 
 	>>> print(matrix_mul([[1, 2, 3]]))
 	Traceback (most recent call last):
-	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_y'
 
 Test combination of arguments that is a list and not a list:
 
@@ -130,7 +130,7 @@ Test arguments with varying length of rows in the matrices:
 	Traceback (most recent call last):
 	ValueError: setting an array element with a sequence.
 
-Test order of validation (list > list or list > non empty list or non empty list of lists > only integers or floats > all rows have the same length > len of rows in m_a == len of col in m_b:
+Test order of validation (list > list or list > non empty list or non empty list of lists > only integers or floats > all rows have the same length > len of rows in m_x == len of col in m_y:
 
 	>>> print(matrix_mul([[1, 2], "string"], [[1, 2], [3, 4]]))
 	Traceback (most recent call last):
