@@ -4,7 +4,7 @@
 void print_python_string(PyObject *p);
 
 /**
- * print_python_object - Checks if the object is a Python bytes object. If so
+ * print_python_string - Checks if the object is a Python bytes object. If so
  * print the size, attempt to print it as a string and displays the first 10
  * character at most in hexadecimal.
  *
