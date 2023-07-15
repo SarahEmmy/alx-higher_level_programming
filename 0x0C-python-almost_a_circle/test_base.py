@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-""" Module for test Base class """
+""" Module for testing the Base class """
 import unittest
+import os
 from models.base import Base
 from models.square import Square
 from models.rectangle import Rectangle
@@ -10,24 +11,24 @@ from unittest.mock import patch
 
 
 class TestBaseMethods(unittest.TestCase):
-    """ Suite to test Base class """
+    """ Test suite for the Base class """
 
     def setUp(self):
         """ Method invoked for each test """
         Base._Base__nb_objects = 0
 
     def test_id(self):
-        """ Test assigned id """
+        """ Test assigning an ID """
         new = Base(1)
         self.assertEqual(new.id, 1)
 
-    def test_id_default(self):
-        """ Test default id """
+    def test_default_id(self):
+        """ Test default ID """
         new = Base()
         self.assertEqual(new.id, 1)
 
-    def test_id_nb_objects(self):
-        """ Test nb object attribute """
+    def test_nb_objects_attribute(self):
+        """ Test nb_objects attribute """
         new = Base()
         new2 = Base()
         new3 = Base()
@@ -36,7 +37,7 @@ class TestBaseMethods(unittest.TestCase):
         self.assertEqual(new3.id, 3)
 
     def test_id_mix(self):
-        """ Test nb object attributes and assigned id """
+        """ Test combination of assigned ID and nb_objects attribute """
         new = Base()
         new2 = Base(1024)
         new3 = Base()
@@ -45,23 +46,23 @@ class TestBaseMethods(unittest.TestCase):
         self.assertEqual(new3.id, 2)
 
     def test_string_id(self):
-        """ Test string id """
+        """ Test string ID """
         new = Base('1')
         self.assertEqual(new.id, '1')
 
-    def test_more_args_id(self):
-        """ Test passing more args to init method """
+    def test_additional_args(self):
+        """ Test passing additional arguments to the init method """
         with self.assertRaises(TypeError):
             new = Base(1, 1)
 
-    def test_access_private_attrs(self):
-        """ Test accessing to private attributes """
+    def test_private_attrs_access(self):
+        """ Test accessing private attributes """
         new = Base()
         with self.assertRaises(AttributeError):
             new.__nb_objects
 
     def test_save_to_file_1(self):
-        """ Test JSON file """
+        """ Test saving objects to a JSON file """
         Square.save_to_file(None)
         res = "[]\n"
         with open("Square.json", "r") as file:
@@ -79,7 +80,7 @@ class TestBaseMethods(unittest.TestCase):
             self.assertEqual(file.read(), "[]")
 
     def test_save_to_file_2(self):
-        """ Test JSON file """
+        """ Test saving objects to a JSON file """
         Rectangle.save_to_file(None)
         res = "[]\n"
         with open("Rectangle.json", "r") as file:
