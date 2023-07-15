@@ -103,7 +103,8 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
-        """ Returns a dictionary representation of the rectangle's attributes """
+        """ Returns a dictionary representation
+        of the rectangle's attributes """
         list_atr = ['id', 'width', 'height', 'x', 'y']
         dict_res = {}
 
