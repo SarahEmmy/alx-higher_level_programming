@@ -3,9 +3,9 @@
 const squareSize = Number(process.argv[2]);
 
 if (Number(process.argv[2])) {
-  let i = 0;
+  let j = 0;
 
-  for (i; i < squareSize; i++) {
+  for (j; j < squareSize; j++) {
     console.log('X'.repeat(squareSize));
   }
 } else {
