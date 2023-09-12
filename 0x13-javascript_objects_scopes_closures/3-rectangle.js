@@ -1,17 +1,17 @@
 #!/usr/bin/node
 
 class Rectangle {
-  constructor (w, h) {
-    if (w > 0 && h > 0) {
-      this.width = w;
-      this.height = h;
+  constructor (width, height) {
+    if (width > 0 && height > 0) {
+      this.w = width;
+      this.h = height;
     }
   }
 
   print () {
-    let i = 0;
-    for (i; i < this.height; i++) {
-      console.log('X'.repeat(this.width));
+    let j = 0;
+    for (j; j < this.h; j++) {
+      console.log('X'.repeat(this.w));
     }
   }
 }
