@@ -2,8 +2,8 @@
 exports.esrever = function (list) {
   const revsList = [];
 
-  for (let i = list.length - 1; i >= 0; i--) {
-    revsList.push(list[i]);
+  for (let j = list.length - 1; j >= 0; j--) {
+    revsList.push(list[j]);
   }
   return revsList;
 };
