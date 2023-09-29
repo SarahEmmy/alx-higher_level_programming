@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-Python script that takes in a URL and an email address,
-sends a POST request to the passed URL with the email as a parameter
+This Python script accepts a URL and an email address as input, then sends a 
+POST request to the provided URL with the email as a parameter.
 """
 import requests
 import sys
