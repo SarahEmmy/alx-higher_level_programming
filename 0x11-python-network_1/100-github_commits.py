@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""  fetches github user repo commits  """
+"""  This Python script fetches the commits from a GitHub user's repositories.  """
 import requests
 from sys import argv
 
