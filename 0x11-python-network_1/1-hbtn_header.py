@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-Python script that takes in a URL, sends a request to the URL and displays
-the value of the X-Request-Id variable found in the header of the response.
+This Python script is designed to take a URL as input, send a request to that URL, 
+and then extract and display the value of the 'X-Request-Id' variable located 
+within the response's header.
 """
 import urllib.request
 import sys
