@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 """
-This Python script accepts a URL and an email address as input and performs a 
-POST request to the specified URL, including the email address as a parameter.
+This Python script accepts a URL and an email address
+as input and performs a POST request to the specified URL,
+including the email address as a parameter.
 """
 import urllib.request
 import urllib.parse
