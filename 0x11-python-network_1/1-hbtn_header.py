@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-This Python script is designed to take a URL as input, send a request to that URL, 
-and then extract and display the value of the 'X-Request-Id' variable located 
-within the response's header.
+This Python script is designed to take a URL as input, send
+a request to that URL, and then extract and display the value
+of the 'X-Request-Id' variable located within the
+response's header.
 """
 import urllib.request
 import sys
