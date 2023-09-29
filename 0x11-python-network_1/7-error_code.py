@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that takes in a URL, sends a request to the URL and manage errors
+This Python script performs a URL request and includes error handling.
 """
 import requests
 import sys
