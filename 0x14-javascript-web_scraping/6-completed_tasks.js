@@ -2,21 +2,23 @@
 const request = require('request');
 const url = process.argv[2];
 
-request.get(url, (error, response, body) => {
-  if (error) {
-    console.log(erorr);
-  } 
-  if (response.statusCode === 200) {
+request(url, (err, response, body) => {
+  if (err) {
+    console.log(err);
+  } else if (response.statusCode === 200) {
     const completed = {};
     const tasks = JSON.parse(body);
-    tasks.forEach((task => {
+    tasks.forEach(task => {
       if (task.completed === true) {
-        completed[task.userId] = (completed[task.userId] || 0) + 1;
+        if (completed[task.userId] === undefined) {
+          completed[task.userId] = 1;
+        } else {
+          completed[task.userId]++;
+        }
       }
     });
     console.log(completed);
-  } 
-  else {
-    console.error(`An error occurred. Status code: ${response.statusCode}`);
+  } else {
+    console.log('An error occured. Status code: ' + response.statusCode);
   }
 });
